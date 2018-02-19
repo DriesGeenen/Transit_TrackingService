@@ -54,11 +54,11 @@ exports.addTracking = function (req, res) {
     });
 };
 
-exports.getEcmrIdByCode = function (req, res) {
-    var promise = TrackingRepository.getEcmrIdByCode(req.params.code);
+exports.getTruckByCode = function (req, res) {
+    var promise = TrackingRepository.getTruckByCode(req.params.code);
     promise.then(function (tracking) {
-        return res.json({success: true, ecmrId: tracking.ecmrId});
+        return res.json({success: true, truck: tracking.truck});
     }, function (err) {
-        return res.status(500).json({success: false, msg: 'Failed to get ecmr by code', error: err});
+        return res.status(500).json({success: false, msg: 'Failed to get truck by code', error: err});
     });
 };

@@ -6,7 +6,7 @@ const trackingSchema = mongoose.Schema({
         unique: true,
         required: true
     },
-    ecmrId : {
+    truck : {
         type: String,
         required: true
     }

@@ -11,7 +11,7 @@ exports.getTrackingById = function (id) {
     return Tracking.findById(id).select('-password');
 };
 
-exports.getEcmrIdByCode = function (code) {
+exports.getTruckByCode = function (code) {
     return Tracking.findOne({trackingCode: code});
 };
 
