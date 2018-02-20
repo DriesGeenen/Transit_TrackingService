@@ -17,11 +17,11 @@ module.exports = function (app) {
         .get(TrackingController.getAllTrackings)
         .post(TrackingController.addTracking);
 
+    app.route('/trackings/code/:code')
+        .get(TrackingController.getDriverByCode);
+
     app.route('/trackings/:id')
         .get(TrackingController.getTrackingById)
         .delete(TrackingController.deleteTracking)
         .put(TrackingController.updateTracking);
-
-    app.route('/trackings/code/:code')
-        .get(TrackingController.getDriverByCode);
 };

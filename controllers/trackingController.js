@@ -57,7 +57,11 @@ exports.addTracking = function (req, res) {
 exports.getDriverByCode = function (req, res) {
     var promise = TrackingRepository.getDriverByCode(req.params.code);
     promise.then(function (tracking) {
-        return res.json({success: true, driver: tracking.driver});
+        if(tracking){
+            return res.json({success: true, driver: tracking.driver});
+        }
+        return res.status(500).json({success: false, msg: 'Failed to get driver by code'});
+
     }, function (err) {
         return res.status(500).json({success: false, msg: 'Failed to get driver by code', error: err});
     });
