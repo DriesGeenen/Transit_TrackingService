@@ -23,5 +23,5 @@ module.exports = function (app) {
         .put(TrackingController.updateTracking);
 
     app.route('/trackings/code/:code')
-        .get(TrackingController.getTruckByCode);
+        .get(TrackingController.getDriverByCode);
 };

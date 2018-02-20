@@ -11,7 +11,7 @@ exports.getTrackingById = function (id) {
     return Tracking.findById(id).select('-password');
 };
 
-exports.getTruckByCode = function (code) {
+exports.getDriverByCode = function (code) {
     return Tracking.findOne({trackingCode: code});
 };
 

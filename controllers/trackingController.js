@@ -54,11 +54,11 @@ exports.addTracking = function (req, res) {
     });
 };
 
-exports.getTruckByCode = function (req, res) {
-    var promise = TrackingRepository.getTruckByCode(req.params.code);
+exports.getDriverByCode = function (req, res) {
+    var promise = TrackingRepository.getDriverByCode(req.params.code);
     promise.then(function (tracking) {
-        return res.json({success: true, truck: tracking.truck});
+        return res.json({success: true, driver: tracking.driver});
     }, function (err) {
-        return res.status(500).json({success: false, msg: 'Failed to get truck by code', error: err});
+        return res.status(500).json({success: false, msg: 'Failed to get driver by code', error: err});
     });
 };
