@@ -105,7 +105,7 @@ exports.generateTrackingCodes = function (req, res) {
 };
 
 exports.deleteTrackingByEcmrId = function (req, res) {
-    var promise = TrackingRepository.deleteTrackingByEcmrId(req.params.ecmrid);
+    const promise = TrackingRepository.deleteTrackingByEcmrId(req.params.ecmrid);
     promise.then(function () {
         return res.json({success: true, msg: 'Tracking removed'});
     }, function (err) {

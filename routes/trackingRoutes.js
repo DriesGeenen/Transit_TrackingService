@@ -23,12 +23,12 @@ module.exports = function (app) {
     app.route('/trackings/generate')
         .post(TrackingController.generateTrackingCodes);
 
+    app.route('/trackings/delete/:ecmrid')
+        .delete(TrackingController.deleteTrackingByEcmrId);
+
     app.route('/trackings/:id')
         .get(TrackingController.getTrackingById)
         .delete(TrackingController.deleteTracking)
         .put(TrackingController.updateTracking);
-
-    app.route('/trackings/delete/:ecmrid')
-        .delete(TrackingController.deleteTrackingByEcmrId);
 
 };
