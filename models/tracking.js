@@ -9,6 +9,11 @@ const trackingSchema = mongoose.Schema({
     driver : {
         type: String,
         required: true
+    },
+    ecmrId : {
+        type: String,
+        unique: true,
+        required: true
     }
 });
 

@@ -27,4 +27,8 @@ module.exports = function (app) {
         .get(TrackingController.getTrackingById)
         .delete(TrackingController.deleteTracking)
         .put(TrackingController.updateTracking);
+
+    app.route('/trackings/delete/:ecmrid')
+        .delete(TrackingController.deleteTrackingByEcmrId);
+
 };

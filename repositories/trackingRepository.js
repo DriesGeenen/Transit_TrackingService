@@ -26,3 +26,7 @@ exports.updateTracking = function (id, tracking) {
 exports.deleteTracking = function (id) {
     return Tracking.remove({_id: id});
 };
+
+exports.deleteTrackingByEcmrId = function (ecmrid) {
+    return Tracking.remove({ecmrId: ecmrid});
+};
