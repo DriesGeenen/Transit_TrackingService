@@ -20,6 +20,9 @@ module.exports = function (app) {
     app.route('/trackings/code/:code')
         .get(TrackingController.getDriverByCode);
 
+    app.route('/trackings/generate')
+        .post(TrackingController.generateTrackingCodes);
+
     app.route('/trackings/:id')
         .get(TrackingController.getTrackingById)
         .delete(TrackingController.deleteTracking)
