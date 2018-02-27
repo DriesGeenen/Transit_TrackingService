@@ -1,8 +1,8 @@
 'use strict';
 
 module.exports = function (app) {
-    var TrackingController = require('../controllers/trackingController');
-    var AuthHelper = require('../helpers/authHelper');
+    const TrackingController = require('../controllers/trackingController');
+    const AuthHelper = require('../helpers/authHelper');
 
     //app.route('/trackings')
     //    .get(AuthHelper.adminRequired, TrackingController.getAllTrackings)
